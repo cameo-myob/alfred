@@ -1,24 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '@myob/myob-styles/dist/styles/myob-clean.css';
+
+import { Navigation, MYOBLogo, StandardTemplate } from '@myob/myob-widgets';
+
+const brand = (
+  <Navigation.Brand url="#Dashboard" width="73px">
+    <MYOBLogo />
+  </Navigation.Brand>
+);
+
+const primary = [
+  <Navigation.Link
+    key="home"
+    onSelect={() => ('selected')}
+    label="Home"
+  />,
+  <Navigation.Link
+    key="startHere"
+    onSelect={() => ('selected')}
+    label="Start Here"
+  />,
+  <Navigation.Link
+    key="about"
+    onSelect={() => ('selected')}
+    label="About"
+  />,
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation fluid brand={brand} primary={primary} />
+      <StandardTemplate
+        pageHead="Skills Assessor"
+      >
+        this is the body.
+      </StandardTemplate>
     </div>
   );
 }
