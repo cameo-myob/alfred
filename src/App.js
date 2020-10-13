@@ -3,6 +3,8 @@ import '@myob/myob-styles/dist/styles/myob-clean.css';
 
 import { Navigation, MYOBLogo, StandardTemplate } from '@myob/myob-widgets';
 
+import Alfred from './img/alfred.png';
+
 const brand = (
   <Navigation.Brand url="#Dashboard" width="73px">
     <MYOBLogo />
@@ -31,10 +33,8 @@ function App() {
   return (
     <div className="App">
       <Navigation fluid brand={brand} primary={primary} />
-      <StandardTemplate
-        pageHead="Skills Assessor"
-      >
-        this is the body.
+      <StandardTemplate>
+        <img src={Alfred} alt="Alfred logo" className="logo" />
       </StandardTemplate>
     </div>
   );
