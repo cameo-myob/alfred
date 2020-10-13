@@ -1,7 +1,10 @@
 import React from 'react';
 import '@myob/myob-styles/dist/styles/myob-clean.css';
+import { Link } from 'react-router-dom';
 
-import { Navigation, MYOBLogo, StandardTemplate } from '@myob/myob-widgets';
+import {
+  Navigation, MYOBLogo, StandardTemplate, Button,
+} from '@myob/myob-widgets';
 
 import Alfred from './img/alfred.png';
 
@@ -35,6 +38,7 @@ function App() {
       <Navigation fluid brand={brand} primary={primary} />
       <StandardTemplate>
         <img src={Alfred} alt="Alfred logo" className="logo" />
+        <Link to="/start-here"><Button type="primary">Let's get started!</Button></Link>
       </StandardTemplate>
     </div>
   );
