@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Button, Select, FormTemplate } from '@myob/myob-widgets';
 import protegeCards from '../data/juniorDeveloperCards.json';
@@ -48,7 +47,7 @@ const StartHere = (setSkillCards) => {
           <Select.Option value="BUSINESS_ANALYST" label="Business Analyst" />
         </Select>
         <br />
-        <Link to="/step-one" onClick={assignUserType}><Button type="primary" onClick={() => { }}>Let's go!</Button></Link>
+        {/* <Link to="/step-one" onClick={assignUserType}><Button type="primary" onClick={() => { }}>Let's go!</Button></Link> */}
       </FormTemplate>
     </div>
   );
