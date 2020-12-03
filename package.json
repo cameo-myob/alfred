@@ -10,11 +10,12 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router5": "^8.0.1",
+    "react-router5": "7.1.0",
     "react-scripts": "^3.4.3",
-    "router5": "^8.0.1",
-    "router5-helpers": "^8.0.0",
-    "router5-plugin-browser": "^8.0.1"
+    "router5": "7.0.2",
+    "router5-helpers": "7.0.1",
+    "router5-plugin-browser": "7.0.2",
+    "router5-plugin-logger": "7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

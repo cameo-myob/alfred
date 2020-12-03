@@ -4,7 +4,7 @@ import './index.css';
 import { RouterProvider } from 'react-router5';
 
 import initializeRouter from './initializeRouter';
-import App from './App';
+import AppBase from './App';
 import Home from './components/Home';
 import StartHere from './components/StartHere';
 import About from './components/About';
@@ -12,7 +12,7 @@ import About from './components/About';
 async function main() {
   const routes = [
     {
-      name: 'home', label: 'Home', component: Home, path: '/',
+      name: 'home', label: 'Home', component: Home, path: '/home',
     },
     {
       name: 'start-here', label: 'StartHere', component: StartHere, path: '/start-here',
@@ -32,14 +32,23 @@ async function main() {
   });
 
   const router = initializeRouter(routes);
-
-  const Main = (
+  const App = (
     <RouterProvider router={router}>
-      <App router={router} modules={modules} routes={routes} />
+
+      <AppBase
+        router={router}
+        modules={modules}
+        routes={routes}
+      />
+
     </RouterProvider>
   );
-
-  ReactDOM.render(Main, document.getElementById('root'));
+  // Do not render anything if inside an iFrame
+  if (window === window.parent) {
+    router.start(() => {
+      ReactDOM.render(App, document.getElementById('root'));
+    });
+  }
 }
 
 main();

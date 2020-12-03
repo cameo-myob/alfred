@@ -3,9 +3,9 @@ import React from 'react';
 import { startsWithSegment } from 'router5-helpers';
 import { withRoute } from 'react-router5';
 
-function Switch(prop) {
-  console.log(prop);
-  const { route, modules, routeTo } = prop;
+function Switch({
+  route, modules, routeTo, router,
+}) {
   const { name } = route;
   const testRoute = startsWithSegment(name);
   let Component = '';
@@ -15,7 +15,7 @@ function Switch(prop) {
       Component = modules[`${key}`].component;
     }
   });
-  return <Component routeTo={routeTo} />;
+  return <Component routeTo={routeTo} router={router} />;
 }
 
 export default withRoute(Switch);

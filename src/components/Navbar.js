@@ -17,7 +17,7 @@ export default function Navbar() {
     <Navigation.Link
       key="home"
       label="Home"
-      url="#/"
+      url="#/home"
     />,
     <Navigation.Link
       key="startHere"

@@ -3,7 +3,7 @@ import browserPlugin from 'router5-plugin-browser';
 
 export default function initializeRouter(routes) {
   const router = createRouter(routes, {
-    defaultRoute: '/',
+    defaultRoute: 'home',
   });
   // Plugins
   router.usePlugin(
